@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sell digital products </title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="fontawesome-free-7.0.1-web/fontawesome-free-7.0.1-web/css/all.css">
+    <style>
+       
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">AV-AVA</div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">HOME</a></li>
+                <li><a href="#about">ABOUT</a></li>
+                <li><a href="#services">SERVICE</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+            </ul>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero fade-in" id="home">
+        <div>
+        <h1>Wellcome To</h1>
+        <p>Define your digital product.</p>
+        <a href="#services" class="btn">Play Now</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about observe" id="about">
+        <h2>About Our</h2>
+        <p>Welcome to a colorful world!
+           We create digital children's magazines that are fun, educational, and definitely enjoyable!
+           Each page is filled with engaging stories, games, and knowledge that help children learn while playing.
+           Our magazines can be read anytime, anywhere — and you can even resell them to share the joy with other children! 💕</p>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section services observe" id="services">
+        <h2>Service</h2>
+        <div class="services-grid">
+            <div class="service-item">
+                <div class="service-icon"><img src="gambar/nama-nama (3).png" alt="gambar">
+                </div> 
+                <h4>✨ Children's Educational Book: Dinosaur Names ✨</h4>
+                <i><span>Rp.5000</span></i>
+                <button type="submit">
+                    <a href="https://lynk.id/av-ava/7wr3emewyz1x">Buy Now</a>
+                </button>
+                <hr>
+            </div>
+            <div class="service-item">
+                <div class="service-icon"><img src="gambar/buku_mewarnai.jpg" alt="gambar"></div>
+                <h4>CUTE ANIMAL COLORING BOOK - 10 PAGES OF JOY! 🎨</h4>
+                <i><span>Rp.10000</span></i>
+                <button type="submit">
+                    <a href="https://lynk.id/av-ava/9y7rr00y7ggx">Buy Now</a>
+                </button>
+                <hr>
+            </div>
+            <!-- <div class="service-item">
+                <div class="service-icon">💼</div>
+                <h3>Konsultasi Bisnis</h3>
+                <p>Penasihat ahli untuk pertumbuhan berkelanjutan dan inovasi produk.</p>
+            </div> -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div>
+        <p>&copy; AV-AVA. Made with ❤️ for produtc digital. | Hubungi: <a href="mailto:aufarajwa91@gmail.com subject=Pesan%20dari%20Website&body=Halo,%20saya%20punya%20pertanyaan%20tentang%20produk%20Anda."> <i class="fas fa-envelope fa-1x"></i>aufarajwa91@gmail.com</a>
+        </div>
+        <button type="submit" class="wa">
+        <p><a href="https://www.whatsapp.com/6289508081977"><i class="fab fa-whatsapp fa-1x"></i> | Whatsapp</a></p>
+        </button>
+        <button type="submit" class="ig">
+        <p><a href="https://www.instagram.com/aufa0133"><i class="fab fa-instagram fa-1x"></i> | Instagram</a></p>
+        </button>
+    </footer>
+
+    <script>
+        // Toggle Menu Hamburger
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            const hamburger = document.querySelector('.hamburger');
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        }
+
+        // Tutup menu saat klik link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', toggleMenu);
+        });
+
+        // Animasi Scroll (Intersection Observer)
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.observe, .fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Efek header saat scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
+        });
+    </script>
+</body>
+</html>
